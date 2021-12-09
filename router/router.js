@@ -12,11 +12,7 @@ router.post('/signin/facebook',facebookLogin.loginFacebook);
 router.get('/vertify',vertify.checkVertify);
 
 //crud
-// router.get('/', controllerGetUser.getData);
-router.route('/user').get(async (req, res) => {
-    const users = await userModel.find();
-    res.json(users);
-});
+router.get('/user', controllerGetUser.getData);
 router.post('/create',createUser.PostData);
 router.put('/update/:id',updateUser.updateData);
 router.delete('/delete/:id',deleteUser.deleteUser);
